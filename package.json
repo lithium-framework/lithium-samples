@@ -2,10 +2,23 @@
   "name": "tests",
   "version": "1.0.0",
   "description": "Lithium-framework typescript starter",
-  "main": "webpack.config.js",
+  "source": [
+    "src/index.html",
+    "src/pages/asyncAppend/index.html",
+    "src/pages/children/index.html",
+    "src/pages/ref/index.html",
+    "src/pages/repeat/index.html",
+    "src/pages/state/index.html",
+    "src/pages/until/index.html",
+    "src/pages/when/index.html"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --config webpack.config.js --mode development"
+    "clear:dist": "rm -rf dist",
+    "clear:cache": "rm -rf .parcel-cache",
+    "clear": "npm run clear:dist & npm run clear:cache",
+    "start": "npm run clear && parcel --port 8080 --log-level verbose",
+    "build": "npm run clear && parcel build --log-level verbose"
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +31,7 @@
     "typescript": "^5.5.4"
   },
   "dependencies": {
-    "@lithium-framework/core": "^1.6.0"
+    "@lithium-framework/core": "file:../../core",
+    "@microsoft/fast-element": "^2.0.0-beta.26"
   }
 }

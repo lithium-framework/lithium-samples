@@ -1,6 +1,6 @@
 import { html , ComponentContext , children , state , repeat , elements } from '@lithium-framework/core';
 
-export const sampleChildren = html<ComponentContext< {} , { [key:string]:any } >>`${( context ) => {
+export const sampleChildren = html<ComponentContext< { listItems:HTMLElement[] } , {} >>`${( context ) => {
 
   // const [ listItems , setListItems ] = context.createState('listItems' , []);
 
@@ -11,7 +11,7 @@ export const sampleChildren = html<ComponentContext< {} , { [key:string]:any } >
       ${ repeat( [ 'A' , 'B' ] , html<string>`<li>${ str => str }</li>` ) }
     </ul>
     ${() => {
-      return html`<p>total nodes : (${ context["listItems"].length })</p>`
+      return html`<p>total nodes : (${ context.listItems.length })</p>`
     }}
   </div>`;
   

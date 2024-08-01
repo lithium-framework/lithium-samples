@@ -1,6 +1,6 @@
 import { html , asyncAppend , WebComponent , state , customElement } from '@lithium-framework/core';
 
-const template = html<SampleAsyncAppend>`${( context ) => {
+const template = html`${( context:SampleAsyncAppend ) => {
   
   return html`<div>
     ${ asyncAppend( context.preloadData , ( result ) => {
@@ -16,7 +16,7 @@ const template = html<SampleAsyncAppend>`${( context ) => {
 })
 export class SampleAsyncAppend extends WebComponent{
 
-  preloadData = new Promise(( next , reject ) => {
+  preloadData:Promise<number> = new Promise(( next , reject ) => {
     setTimeout(() => {
         next( 1000 )
     } , 1000)
