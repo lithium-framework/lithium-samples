@@ -2,8 +2,6 @@ import { html , ComponentContext , children , state , repeat , elements } from '
 
 export const sampleChildren = html<ComponentContext< { listItems:HTMLElement[] } , {} >>`${( context ) => {
 
-  // const [ listItems , setListItems ] = context.createState('listItems' , []);
-
   context.createConsumable( 'listItems' , [] );
   
   return html`<div>
