@@ -1,6 +1,6 @@
-import { html , ComponentContext , children , state , repeat , elements } from '@lithium-framework/core';
+import { html , ViewContext , children , state , repeat , elements } from '@lithium-framework/core';
 
-export const sampleChildren = html<ComponentContext< { listItems:HTMLElement[] } , {} >>`${( context ) => {
+export const sampleChildren = html<ViewContext< { listItems:HTMLElement[] } , {} >>`${( context ) => {
 
   context.createConsumable( 'listItems' , [] );
   

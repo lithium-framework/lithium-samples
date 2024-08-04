@@ -1,6 +1,6 @@
-import { html , ComponentContext , asyncAppend } from '@lithium-framework/core';
+import { html , ViewContext , asyncAppend } from '@lithium-framework/core';
 
-export const sampleAsyncAppend = html<ComponentContext< {} , { [key:string]:any } >>`${( context ) => {
+export const sampleAsyncAppend = html<ViewContext< {} , { [key:string]:any } >>`${( context ) => {
 
   const preloadData:Promise<number> = new Promise(( next , reject ) => {
     setTimeout(() => {

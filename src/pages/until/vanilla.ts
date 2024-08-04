@@ -1,6 +1,6 @@
-import { html , ComponentContext , until, ViewTemplate } from '@lithium-framework/core';
+import { html , ViewContext , until, ViewTemplate } from '@lithium-framework/core';
 
-export const sampleUntil = html<ComponentContext< {} , { [key:string]:any } >>`${( context ) => {
+export const sampleUntil = html<ViewContext< {} , { [key:string]:any } >>`${( context ) => {
 
   const preloadData:Promise<ViewTemplate> = new Promise(( next , reject ) => {
     setTimeout(() => {

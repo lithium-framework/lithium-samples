@@ -1,6 +1,6 @@
-import { html , ComponentContext , style } from '@lithium-framework/core';
+import { html , ViewContext , style } from '@lithium-framework/core';
 
-export const sampleState = html<ComponentContext< {} , { [key:string]:any } >>`${( context ) => {
+export const sampleState = html<ViewContext< {} , { [key:string]:any } >>`${( context ) => {
 
   let [ counter , setCounter ] = context.createState<number>( "counter" , 0 );
 

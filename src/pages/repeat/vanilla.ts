@@ -1,6 +1,6 @@
-import { html , ComponentContext , repeat } from '@lithium-framework/core';
+import { html , ViewContext , repeat } from '@lithium-framework/core';
 
-export const sampleRepeat = html<ComponentContext< {} , { [key:string]:any } >>`${( context ) => {
+export const sampleRepeat = html<ViewContext< {} , { [key:string]:any } >>`${( context ) => {
   
   return html`<div>
     <ul>

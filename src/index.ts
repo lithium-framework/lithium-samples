@@ -1,66 +1,40 @@
-import { render , html , ViewTemplate , ComponentContext } from '@lithium-framework/core';
-import { repeat , useState , style , asyncAppend , createRef , ref , until } from '@lithium-framework/core';
+import { render , html , ViewTemplate , ViewContext } from '@lithium-framework/core';
+import '@lithium-framework/router-element';
 
-// import { sampleState } from './components/state/vanilla';
-// import './components/state/webComponent';
+let userProfile = html<{ userId:string }>`${(context:ViewContext) => {
+    return html`<p>${context.userId ? `UserId ${context.userId}` : `Users ( No userId )`}</p>`
+}}`;
 
-// import { sampleAsyncAppend } from './components/asyncAppend/vanilla';
-// import './components/asyncAppend/webComponent';
+let users_router_config = [
+    { 
+        path : '*/' , 
+        render : userProfile
+    },
+    { 
+        path : '*/:userId' , 
+        render : userProfile
+    }
+]
 
-// import { sampleUntil } from './components/until/vanilla';
-// import './components/until/webComponent';
+let home = html`<h1>Hello</h1>` ;
+let users = html`<div>
+    <h1>Users</h1>
+    <lithium-router :config = ${users_router_config} ></lithium-router>
+</div>` ;
 
-// import { sampleRef } from './components/ref/vanilla';
-// import './components/ref/webComponent';
-
-// import { sampleRepeat } from './components/repeat/vanilla';
-// import './components/repeat/webComponent';
-
-// import { sampleWhen } from './components/when/vanilla';
-// import './components/when/webComponent';
-
-// import { sampleChildren } from './components/children/vanilla';
-// import './components/children/webComponent';
-
-// import "./index.scss";
-// import { SampleRepeat } from './components/repeat/webComponent';
-
-// let blocks_style = { padding : '10px' , border : '1px solid black' }
-
-// const WhenSample = html`<div style = ${style(blocks_style)}>
-//     <div>
-//         <h1>Vanilla</h1>
-//         ${ sampleWhen }
-//     </div>
-//     <div>
-//         <h1>WebComponent</h1>
-//         <sample-when></sample-when>
-//     </div>
-// </div>`;
-
-// const ChildrenSample = html`<div style = ${style(blocks_style)}>
-//     <div>
-//         <h1>Vanilla</h1>
-//         ${ sampleChildren }
-//     </div>
-//     <div>
-//         <h1>WebComponent</h1>
-//         <sample-children></sample-children>
-//     </div>
-// </div>`;
+let home_router_config = [
+    { 
+        path : '/' , 
+        render : home
+    },
+    { 
+        path : '/users/*' , 
+        render : users
+    },
+];
 
 const RouterSample = html`<div>
-    <lithium-router :config = ${[
-        { path : '/' , render : html`<h1>Hello</h1>` },
-        { path : '/users/*' , render : html`<div>
-            <h1>Users</h1>
-            <lithium-router :config = ${[
-                { path : '*/:userId' , render : html<{ userId:string }>`${(context:ComponentContext) => {
-                    return html`<p>userId ${context.userId}</p>`
-                }}` }
-            ]} ></lithium-router>
-        </div>` },
-    ]}></lithium-router>
+    <lithium-router :config = ${home_router_config} ></lithium-router>
 </div>`;
 
 // let ApplicationSample = html`<main-application
@@ -82,30 +56,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // render( RepeatSample , document.body );
     // render( WhenSample , document.body );
     // render( ChildrenSample , document.body );
-    // render( RouterSample , document.body );
+    render( RouterSample , document.body );
 
-    render( html`<main-application :config = ${[
-        {
-            path : '/' ,
-            name : 'home',
-            render : html`<h1>Home</h1>`
-        },
-        { 
-            path : '/users' , 
-            name : 'users',
-            render : html`<div>
-                <h1>Users</h1>
-                <lithium-router 
-                    :config = ${[
-                        { 
-                            path : '/:userId' ,
-                            render : RouterSample
-                        }
-                    ]} >
-                </lithium-router>
-            </div>` 
-        },
-    ]}>
-    </main-application>` , document.body );
+    // render( html`<main-application :config = ${[
+    //     {
+    //         path : '/' ,
+    //         name : 'home',
+    //         render : html`<h1>Home</h1>`
+    //     },
+    //     { 
+    //         path : '/users' , 
+    //         name : 'users',
+    //         render : html`<div>
+    //             <h1>Users</h1>
+    //             <lithium-router 
+    //                 :config = ${[
+    //                     { 
+    //                         path : '/:userId' ,
+    //                         render : RouterSample
+    //                     }
+    //                 ]} >
+    //             </lithium-router>
+    //         </div>` 
+    //     },
+    // ]}>
+    // </main-application>` , document.body );
 
 });

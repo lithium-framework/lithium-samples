@@ -1,6 +1,6 @@
-import { html , ComponentContext , when, ViewTemplate } from '@lithium-framework/core';
+import { html , ViewContext , when, ViewTemplate } from '@lithium-framework/core';
 
-export const sampleWhen = html<ComponentContext< {} , { [key:string]:any } >>`${( context ) => {
+export const sampleWhen = html<ViewContext< {} , { [key:string]:any } >>`${( context ) => {
 
   let [ isLoaded , setLoading ] = context.createState<boolean>('data' , false);
 

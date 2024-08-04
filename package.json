@@ -31,7 +31,8 @@
     "typescript": "^5.5.4"
   },
   "dependencies": {
-    "@lithium-framework/core": "file:../../core",
+    "@lithium-framework/core": "^1.7.0",
+    "@lithium-framework/router-element": "^1.0.0",
     "@microsoft/fast-element": "^2.0.0-beta.26"
   }
 }

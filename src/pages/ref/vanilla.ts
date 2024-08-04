@@ -1,6 +1,6 @@
-import { html , ComponentContext , ref , createRef } from '@lithium-framework/core';
+import { html , ViewContext , ref , createRef } from '@lithium-framework/core';
 
-export const sampleRef = html<ComponentContext< {} , { [key:string]:any } >>`${( context ) => {
+export const sampleRef = html<ViewContext< {} , { [key:string]:any } >>`${( context ) => {
 
   const element_ref = createRef<HTMLDivElement>();
   
