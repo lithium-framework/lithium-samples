@@ -27,61 +27,6 @@ import { repeat , useState , style , asyncAppend , createRef , ref , until } fro
 
 // let blocks_style = { padding : '10px' , border : '1px solid black' }
 
-// const StateSample = html`<div style = ${style(blocks_style)}>
-//     <div>
-//         <h1>Vanilla</h1>
-//         ${ sampleState }
-//     </div>
-//     <div>
-//         <h1>WebComponent</h1>
-//         <sample-state></sample-state>
-//     </div>
-// </div>`;
-
-// const AsyncAppendSample = html`<div style = ${style(blocks_style)}>
-//     <div>
-//         <h1>Vanilla</h1>
-//         ${ sampleAsyncAppend }
-//     </div>
-//     <div>
-//         <h1>WebComponent</h1>
-//         <sample-async-append></sample-async-append>
-//     </div>
-// </div>`;
-
-// const UntilSample = html`<div style = ${style(blocks_style)}>
-//     <div>
-//         <h1>Vanilla</h1>
-//         ${ sampleUntil }
-//     </div>
-//     <div>
-//         <h1>WebComponent</h1>
-//         <sample-until></sample-until>
-//     </div>
-// </div>`;
-
-// const RefSample = html`<div style = ${style(blocks_style)}>
-//     <div>
-//         <h1>Vanilla</h1>
-//         ${ sampleRef }
-//     </div>
-//     <div>
-//         <h1>WebComponent</h1>
-//         <sample-ref></sample-ref>
-//     </div>
-// </div>`;
-
-// const RepeatSample = html`<div style = ${style(blocks_style)}>
-//     <div>
-//         <h1>Vanilla</h1>
-//         ${ sampleRepeat }
-//     </div>
-//     <div>
-//         <h1>WebComponent</h1>
-//         <sample-repeat></sample-repeat>
-//     </div>
-// </div>`;
-
 // const WhenSample = html`<div style = ${style(blocks_style)}>
 //     <div>
 //         <h1>Vanilla</h1>

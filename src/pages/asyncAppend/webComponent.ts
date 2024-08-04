@@ -4,7 +4,7 @@ const template = html`${( context:SampleAsyncAppend ) => {
   
   return html`<div>
     ${ asyncAppend( context.preloadData , ( result ) => {
-      return html`<p>time : ${result}</p>`
+      return html`<p>time : ${result}ms</p>`
     } ) }
   </div>`;
   

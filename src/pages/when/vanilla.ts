@@ -2,21 +2,21 @@ import { html , ComponentContext , when, ViewTemplate } from '@lithium-framework
 
 export const sampleWhen = html<ComponentContext< {} , { [key:string]:any } >>`${( context ) => {
 
-  let [ data , setData ] = context.createState('data' , null);
+  let [ isLoaded , setLoading ] = context.createState<boolean>('data' , false);
 
-  const preloadData = new Promise(( next , reject ) => {
+  const preloadData:Promise<number> = new Promise(( next , reject ) => {
     setTimeout(() => {
         next( 1000 )
     } , 1000)
   });
 
   preloadData.then( ( result ) => {
-    setData( result );
+    setLoading( true );
   } )
   
   return html`<div>
-    ${ when( !data , html`<p>...loading...</p>` ) }
-    ${ when( data , html`<p>${data}</p>` ) }
+    ${ when( !isLoaded , html`<p>⏳ loading ⏳</p>` ) }
+    ${ when( isLoaded , html`<p>✅ loaded ✅</p>` ) }
   </div>`;
   
 }}`

@@ -14,4 +14,4 @@ const AsyncAppendSample = html`<div style = ${style({ padding : '10px' , border 
     </div>
 </div>`;
 
-render( AsyncAppendSample , document.body )
+render( AsyncAppendSample )

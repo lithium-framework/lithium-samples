@@ -9,12 +9,12 @@ const template = html<SampleUntil>`${( context ) => {
   });
 
   preloadData.then( ( result ) => {
-    context.data = result;
+    context.isLoaded = true;
   } )
   
   return html`<div>
-    ${ when( !context.data , html`<p>...loading...</p>` ) }
-    ${ when( context.data , html`<p>${context.data}</p>` ) }
+    ${ when( !context.isLoaded , html`<p>⏳ loading ⏳</p>` ) }
+    ${ when( context.isLoaded , html`<p>✅ loaded ✅</p>` ) }
   </div>`;
   
 }}`;
@@ -25,6 +25,6 @@ const template = html<SampleUntil>`${( context ) => {
 })
 export class SampleUntil extends WebComponent{
 
-  @state data = null;
+  @state isLoaded:boolean = false;
 
 }

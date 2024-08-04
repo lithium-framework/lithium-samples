@@ -10,7 +10,7 @@ export const sampleAsyncAppend = html<ComponentContext< {} , { [key:string]:any 
   
   return html`<div>
     ${ asyncAppend( preloadData , ( result ) => {
-      return html`<p>time : ${result}</p>`
+      return html`<p>time : ${result}ms</p>`
     } ) }
   </div>`;
   
