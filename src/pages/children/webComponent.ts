@@ -19,6 +19,6 @@ const template = html<SampleAsyncAppend>`${( context ) => {
 })
 export class SampleAsyncAppend extends WebComponent{
 
-  @state listItems = [];
+  @state() listItems = [];
 
 }

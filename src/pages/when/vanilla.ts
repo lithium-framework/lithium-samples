@@ -2,7 +2,7 @@ import { html , ViewContext , when, ViewTemplate } from '@lithium-framework/core
 
 export const sampleWhen = html<ViewContext< {} , { [key:string]:any } >>`${( context ) => {
 
-  let [ isLoaded , setLoading ] = context.createState<boolean>('data' , false);
+  let [ isLoaded , setLoading ] = context.bindState<boolean>('data' , false);
 
   const preloadData:Promise<number> = new Promise(( next , reject ) => {
     setTimeout(() => {

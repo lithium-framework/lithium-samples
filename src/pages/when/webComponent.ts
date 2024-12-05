@@ -25,6 +25,6 @@ const template = html<SampleUntil>`${( context ) => {
 })
 export class SampleUntil extends WebComponent{
 
-  @state isLoaded:boolean = false;
+  @state() isLoaded:boolean = false;
 
 }

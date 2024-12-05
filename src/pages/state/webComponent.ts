@@ -15,6 +15,6 @@ const template = html<MyCounter>`${( context ) => {
 })
 export class MyCounter extends WebComponent{
 
-  @state counter = 0;
+  @state() counter = 0;
 
 }
